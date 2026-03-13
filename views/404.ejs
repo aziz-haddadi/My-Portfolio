@@ -1,0 +1,19 @@
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-code glitch-text">404</div>
+            <h1>ACCESS DENIED</h1>
+            <p>The resource you're looking for doesn't exist or has been moved.</p>
+            <div class="error-terminal">
+                <span class="terminal-prompt">pulgaa@kali:~$ </span>
+                <span class="terminal-cmd">locate <%= title %></span>
+                <br>
+                <span class="terminal-error">locate: no results for query</span>
+            </div>
+            <a href="/" class="cta-button">← Return to Base</a>
+        </div>
+    </div>
+
+<%- include('partials/footer') %>

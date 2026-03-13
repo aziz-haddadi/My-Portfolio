@@ -1,0 +1,155 @@
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+
+    <section class="hero">
+        <div class="hero-wrapper">
+            <div class="hero-image-container">
+                <img src="/images/profile.jpg" alt="Mohamed Aziz Haddadi" class="profile-img">
+                <div class="scan-line"></div>
+            </div>
+            <div class="hero-content">
+                <h1>Mohamed Aziz Haddadi</h1>
+                <h2>DFIR Specialist | Blue Team Analyst | Pulgaa</h2>
+                <p>Specialized in Digital Forensics, Incident Response, and Blue Team operations. Expert in malware analysis, threat intelligence, and SOC analysis with proven CTF achievements.</p>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #b8b8d1;">
+                I'm a cybersecurity professional specializing in Digital Forensics & Incident Response (DFIR) and Blue Team operations. 
+                My expertise includes malware analysis, threat intelligence, and SOC analysis. Ranked in the top 1% on TryHackMe, 
+                I've consistently achieved top placements in competitive CTFs including Top 4 in Securinets Qualifications, 
+                Top 10 in Cybertek, and Top 10 in Darkest Hour. Currently seeking opportunities in cybersecurity roles and internships 
+                where I can apply my defensive security skills to protect organizations from evolving threats.
+            </p>
+        </div>
+    </section>
+
+    <section id="writeups">
+        <h2>CTF Writeups</h2>
+        <div class="writeups-grid">
+            <% latestWriteups.forEach(function(post) { %>
+            <div class="writeup-card">
+                <div class="writeup-header">
+                    <h3><%= post.title %></h3>
+                    <span class="writeup-category"><%= post.category %></span>
+                </div>
+                <p class="writeup-description"><%= post.description %></p>
+                <div class="writeup-tags">
+                    <% (post.tags || []).forEach(function(tag) { %>
+                    <span class="tag"><%= tag %></span>
+                    <% }); %>
+                </div>
+                <div class="writeup-footer">
+                    <span style="color: #b8b8d1; font-size: 0.9rem;"><%= post.stats %></span>
+                    <a href="/writeups/<%= post.slug %>" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Read Writeup</a>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <div style="text-align:center; margin-top:2rem;">
+            <a href="/writeups" class="cta-button">View All Writeups</a>
+        </div>
+    </section>
+
+    <section id="ctf">
+        <h2>CTF Achievements</h2>
+        <div class="ctf-list">
+            <div class="ctf-item">
+                <h3>Securinets Qualifications</h3>
+                <p class="rank">🏆 Rank: Top 4</p>
+                <p style="color: #b8b8d1; margin-top: 0.5rem;">Achieved top 4 placement in one of Tunisia's most competitive cybersecurity qualifications, demonstrating advanced skills across multiple security domains.</p>
+            </div>
+            <div class="ctf-item">
+                <h3>Cybertek CTF</h3>
+                <p class="rank">🥈 Rank: Top 10</p>
+                <p style="color: #b8b8d1; margin-top: 0.5rem;">Secured top 10 position showcasing expertise in digital forensics, malware analysis, and incident response challenges.</p>
+            </div>
+            <div class="ctf-item">
+                <h3>Darkest Hour CTF</h3>
+                <p class="rank">🥉 Rank: Top 10</p>
+                <p style="color: #b8b8d1; margin-top: 0.5rem;">Demonstrated strong blue team capabilities and defensive security skills to achieve top 10 placement in this challenging competition.</p>
+            </div>
+            <div class="ctf-item">
+                <h3>TryHackMe</h3>
+                <p class="rank">⭐ Top 1% Globally</p>
+                <p style="color: #b8b8d1; margin-top: 0.5rem;">Ranked in the top 1% of TryHackMe users worldwide, completing advanced rooms in DFIR, malware analysis, threat hunting, and SOC operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Personal Projects</h2>
+        <div class="projects-grid">
+            <% if (projects.length === 0) { %>
+            <div class="project-card">
+                <h3>Coming Soon</h3>
+                <p>Currently working on exciting DFIR and Blue Team projects. Check back soon for updates on my latest security research and tools.</p>
+                <div class="project-tags">
+                    <span class="tag">DFIR</span>
+                    <span class="tag">Malware Analysis</span>
+                    <span class="tag">Threat Intel</span>
+                </div>
+            </div>
+            <% } else { %>
+            <% projects.forEach(function(project) { %>
+            <div class="project-card">
+                <h3><%= project.title %></h3>
+                <p><%= project.description %></p>
+                <div class="project-tags">
+                    <% (project.tags || []).forEach(function(tag) { %>
+                    <span class="tag"><%= tag %></span>
+                    <% }); %>
+                </div>
+            </div>
+            <% }); %>
+            <% } %>
+        </div>
+    </section>
+
+    <section id="certs">
+        <h2>Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-icon">🛡️</div>
+                <h3>Google Cybersecurity Professional Certificate</h3>
+                <p style="color: #b8b8d1;">Google</p>
+                <p style="color: #00ff9d; font-size: 0.9rem; margin-top: 0.5rem;">2024</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">🔐</div>
+                <h3>TryHackMe SOC Level 1</h3>
+                <p style="color: #b8b8d1;">TryHackMe</p>
+                <p style="color: #00ff9d; font-size: 0.9rem; margin-top: 0.5rem;">Certified</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">⚡</div>
+                <h3>Top 1% on TryHackMe</h3>
+                <p style="color: #b8b8d1;">TryHackMe Platform</p>
+                <p style="color: #00ff9d; font-size: 0.9rem; margin-top: 0.5rem;">Global Ranking</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <p style="font-size: 1.1rem; color: #b8b8d1; margin-bottom: 2rem;">
+                Interested in working together or discussing cybersecurity opportunities? 
+                Feel free to reach out through any of the platforms below.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:azizhaddadi10@gmail.com" class="contact-link">Email</a>
+                <a href="https://www.linkedin.com/in/aziz-haddadi-825209288" target="_blank" class="contact-link">LinkedIn</a>
+                <a href="https://github.com/aziz-haddadi" target="_blank" class="contact-link">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<%- include('partials/footer') %>

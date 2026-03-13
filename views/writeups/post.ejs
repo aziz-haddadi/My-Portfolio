@@ -1,0 +1,81 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+    <article class="post-page">
+
+        <header class="post-header">
+            <div class="post-breadcrumb">
+                <a href="/">Home</a> <span>/</span>
+                <a href="/writeups">Writeups</a> <span>/</span>
+                <span><%= post.title %></span>
+            </div>
+
+            <% if (post.cover) { %>
+            <div class="post-cover">
+                <img src="<%= post.cover %>" alt="<%= post.title %> cover">
+            </div>
+            <% } %>
+
+            <h1 class="post-title"><%= post.title %></h1>
+
+            <div class="post-meta">
+                <% if (post.date) { %>
+                <span class="meta-item">
+                    📅 <%= new Date(post.date).toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'}) %>
+                </span>
+                <% } %>
+                <% if (post.category) { %>
+                <span class="meta-item writeup-category"><%= post.category %></span>
+                <% } %>
+                <% if (post.difficulty) { %>
+                <span class="meta-item writeup-difficulty <%= post.difficulty.toLowerCase() %>"><%= post.difficulty %></span>
+                <% } %>
+                <% if (post.readingTime) { %>
+                <span class="meta-item">
+                    ⏱️ <%= post.readingTime %> min read
+                </span>
+                <% } %>
+            </div>
+
+            <% if (post.tags && post.tags.length > 0) { %>
+            <div class="post-tags">
+                <% post.tags.forEach(function(tag) { %>
+                <a href="/writeups?tag=<%= encodeURIComponent(tag) %>" class="tag tag-link"><%= tag %></a>
+                <% }); %>
+            </div>
+            <% } %>
+        </header>
+
+        <div class="post-content">
+            <%- post.content %>
+        </div>
+
+        <% if (relatedPosts && relatedPosts.length > 0) { %>
+        <div class="related-posts">
+            <h2 style="color: #00ff9d; margin-bottom: 1.5rem; text-align: left;">Related Writeups</h2>
+            <div class="writeups-grid">
+                <% relatedPosts.forEach(function(rp) { %>
+                <div class="writeup-card">
+                    <div class="writeup-header">
+                        <h3><a href="/writeups/<%= rp.slug %>" class="card-title-link"><%= rp.title %></a></h3>
+                        <span class="writeup-category"><%= rp.category %></span>
+                    </div>
+                    <p class="writeup-description"><%= rp.description %></p>
+                    <div class="writeup-footer">
+                        <span style="color: #00ff9d; font-size: 0.8rem;">⏱️ <%= rp.readingTime %> min read</span>
+                        <a href="/writeups/<%= rp.slug %>" class="cta-button" style="padding: 0.5rem 1rem;">Read</a>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+        <% } %>
+
+        <div class="post-footer">
+            <a href="/writeups" class="cta-button">← Back to Writeups</a>
+        </div>
+    </article>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<%- include('../partials/footer') %>

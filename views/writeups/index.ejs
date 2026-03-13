@@ -1,0 +1,49 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+    <header class="page-hero">
+        <h1 class="page-title">CTF Writeups</h1>
+        <p class="page-subtitle">Forensics, malware analysis, incident response, and more from competitions worldwide.</p>
+    </header>
+
+    <main class="listing-container">
+
+
+        <!-- Posts Grid -->
+        <% if (posts.length === 0) { %>
+        <div class="empty-state">
+            <p>No writeups found.</p>
+        </div>
+        <% } %>
+
+        <div class="writeups-grid">
+            <% posts.forEach(function(post) { %>
+            <div class="writeup-card">
+                <div class="writeup-header">
+                    <h3><a href="/writeups/<%= post.slug %>" class="card-title-link"><%= post.title %></a></h3>
+                    <span class="writeup-category"><%= post.category %></span>
+                </div>
+                <p class="writeup-description"><%= post.description %></p>
+                <div class="writeup-tags">
+                    <% (post.tags || []).forEach(function(tag) { %>
+                    <a href="/writeups?tag=<%= encodeURIComponent(tag) %>" class="tag tag-link"><%= tag %></a>
+                    <% }); %>
+                </div>
+                <div class="writeup-footer">
+                    <div style="display:flex; align-items:center; gap:1rem;">
+                        <% if (post.difficulty) { %>
+                        <span class="writeup-difficulty <%= post.difficulty.toLowerCase() %>"><%= post.difficulty %></span>
+                        <% } %>
+                        <span style="color: #b8b8d1; font-size: 0.9rem;"><%= post.stats %></span>
+                        <span style="color: #00ff9d; font-size: 0.8rem; opacity: 0.8;">⏱️ <%= post.readingTime %> min read</span>
+                    </div>
+                    <a href="/writeups/<%= post.slug %>" class="cta-button">Read Writeup</a>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,46 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+    <div class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">Personal Projects</h1>
+            <p class="page-subtitle">DFIR tools, research, and Blue Team utilities I've built.</p>
+        </div>
+    </div>
+
+    <div class="listing-container">
+        <div class="projects-grid">
+            <% if (projects.length === 0) { %>
+            <div class="project-card">
+                <h3>Coming Soon</h3>
+                <p>Currently working on exciting DFIR and Blue Team projects. Check back soon for updates on my latest security research and tools.</p>
+                <div class="project-tags">
+                    <span class="tag">DFIR</span>
+                    <span class="tag">Malware Analysis</span>
+                    <span class="tag">Threat Intel</span>
+                </div>
+            </div>
+            <% } else { %>
+            <% projects.forEach(function(project) { %>
+            <div class="project-card">
+                <% if (project.cover) { %>
+                <div class="project-cover">
+                    <img src="<%= project.cover %>" alt="<%= project.title %>">
+                </div>
+                <% } %>
+                <h3><%= project.title %></h3>
+                <p><%= project.description %></p>
+                <div class="project-tags">
+                    <% (project.tags || []).forEach(function(tag) { %>
+                    <span class="tag"><%= tag %></span>
+                    <% }); %>
+                </div>
+            </div>
+            <% }); %>
+            <% } %>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<%- include('../partials/footer') %>
