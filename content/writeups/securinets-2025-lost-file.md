@@ -4,7 +4,7 @@ date: "2025-02-15"
 category: "CTF Writeup"
 tags: ["Memory Forensics", "Reverse Engineering", "IDA Pro", "Cryptography"]
 difficulty: "Hard"
-cover: "/content-images/writeups/securinets-2025-lost-file/cover.png"
+cover: "/content-images/writeups/securinets-2025-lost-file/volatility-consoles.png"
 description: "Ransomware-style challenge requiring memory capture analysis and reverse engineering of an encryption tool to recover a deleted key."
 stats: "Memory Forensics • Encryption Recovery"
 ---

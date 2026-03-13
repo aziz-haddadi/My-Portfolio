@@ -4,7 +4,7 @@ date: "2025-02-15"
 category: "CTF Writeup"
 tags: ["Disk Forensics", "Malware Analysis", "Registry Analysis", "Phishing"]
 difficulty: "Medium"
-cover: "/content-images/writeups/securinets-2025-silent-visitor/cover.png"
+cover: "/content-images/writeups/securinets-2025-silent-visitor/thunderbird-inbox.png"
 description: "Investigation of a malicious npm package and its Go-based payload through Windows disk image analysis."
 stats: "15 Questions • Disk Forensics"
 ---

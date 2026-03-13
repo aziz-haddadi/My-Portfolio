@@ -4,7 +4,7 @@ date: "2025-01-10"
 category: "CTF Writeup"
 tags: ["Memory Forensics", "Volatility 3", "AmCache", "Incident Response"]
 difficulty: "Medium"
-cover: "/content-images/writeups/qnqsec-2025-masks/cover.png"
+cover: "/content-images/writeups/qnqsec-2025-masks/q1-pslist.png"
 description: "Tracing a phishing attack chain from initial email delivery in Outlook to scheduled task persistence using Volatility 3 and AmCache forensics."
 stats: "8 Questions • Memory Forensics"
 ---

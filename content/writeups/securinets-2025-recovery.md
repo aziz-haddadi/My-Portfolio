@@ -4,7 +4,7 @@ date: "2025-02-15"
 category: "CTF Writeup"
 tags: ["Network Analysis", "DNS Exfiltration", "Reverse Engineering", "Ransomware"]
 difficulty: "Hard"
-cover: "/content-images/writeups/securinets-2025-recovery/cover.png"
+cover: "/content-images/writeups/securinets-2025-recovery/wireshark-overview.png"
 description: "Analysis of a DNS-based covert channel used for data exfiltration and ransomware delivery. Includes malware reconstruction and custom LCG decryption."
 stats: "Network Forensics • Malware Reassembly"
 ---

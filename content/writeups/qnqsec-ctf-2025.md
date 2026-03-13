@@ -4,7 +4,7 @@ date: "2025-01-10"
 category: "CTF Writeup"
 tags: ["CTF", "Forensics", "QnQSec"]
 difficulty: "Medium"
-cover: "/content-images/writeups/qnqsec-ctf-2025/banner.png"
+
 description: "Overview of forensics challenges from QnQSec CTF 2025, covering memory forensics with Volatility 3, phishing incident response, and Living Off The Land (LOTL) techniques."
 stats: "2 Challenges Solved • 100% Success Rate"
 ---
